@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-const BOT_TOKEN = '499777622:AAHsj-eTCei-pv5o6TLJo-gtJeMRan6rc-w';
+const BOT_TOKEN = process.env.BOT_TOKEN;
 
 app.set('port', (process.env.PORT || 5000))
 app.use(bodyParser.json());
