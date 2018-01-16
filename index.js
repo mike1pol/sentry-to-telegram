@@ -56,10 +56,9 @@ app.post('/hook/:id', (req, res) => {
   } else {
     pre = "👻 ";
   }
-  pre += `[${body.level}]`;
+  pre += `[${body.level}] (${body.project})`;
   const msg = body.message;
-  const link = `${body.url} (${body.project})`;
-  sendToTelegram(id, `${pre} ${msg} \n ${link}`);
+  sendToTelegram(id, `${pre} ${msg}\n ${body.url}`);
   res.send("OK");
 });
 
